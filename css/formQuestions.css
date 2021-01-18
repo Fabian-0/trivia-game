@@ -1,0 +1,37 @@
+.getQuestiones-form {
+	width: 100%;
+	text-align: center;
+}
+
+.form-questions-title {
+	padding: 20px 0;
+	text-align: center;
+}
+
+.form-questions-input {
+	cursor: pointer;
+	min-width: 190px;
+	font-size: 1rem;
+	padding: 5px 10px;
+	margin: 5px;
+	border-radius: 5px;
+	border: 1px solid #000;
+}
+
+.form-questions-btn, .form-answers-btn {
+	display: block;
+	margin: 15px auto;
+	padding: 10px 15px;
+	font-size: 1rem;
+	border-radius: 5px;
+	background-color: rgb(117, 117, 117);
+	border: 1px solid  rgb(117, 117, 117);
+	color: #fff;
+	transition: all 200ms;
+	cursor: pointer;
+}
+
+.form-questions-btn:hover, .form-answers-btn:hover {
+	color: rgb(117, 117, 117);
+	background-color:#fff;
+}

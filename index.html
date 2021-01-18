@@ -4,8 +4,62 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Trivia Game</title>
+	<link rel="stylesheet" href="./css/grid.css">
+	<link rel="stylesheet" href="./css/styles.css">
+	<link rel="stylesheet" href="./css/session_alert.css">
+	<link rel="stylesheet" href="./css/formQuestions.css">
+	<link rel="stylesheet" href="./css/questions-card.css">
+	<script src="https://kit.fontawesome.com/3f81f9b1b7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	
+	<div class="container" id="containerId">
+		<header class="header row col-lg-12 col-md-12 col-sm-12">
+			<p class="header-total-score" id="userScore">Score: 0</p>
+			<h1 class="header-title">Trivia Game</h1>
+			<nav class="header-menu">
+				<ul class="header-list" id="printUser">
+						
+				</ul>
+			</nav>
+		</header>
+		<div class="questions-options-container">
+			<h2 class="form-questions-title">SELECT QUESTIONS TYPE</h2>
+			<form action="" class="getQuestiones-form" >
+				<select class="form-questions-input" id="categoryValues" required>
+					<option value="anyCategoryValue" id="category8" selected>Any Category</option>
+				</select>
+				<input class="form-questions-input" type="number" name="" id="numberValues" placeholder="Number of questions" min="1" max="50" required>
+				<select class="form-questions-input" id="dificultyValues">
+					<option value="anyDifficultyValue" id="anyDifficulty" selected>Any Difficulty</option>
+					<option value="easy" id="difficultyEasy">Easy</option>
+					<option value="medium" id="difficultyMedium">Medium</option>
+					<option value="hard" id="difficultyHard">Hard</option>
+				</select>
+				<select class="form-questions-input" id="typeValues">
+					<option value="anyType" id="anyTypeId" selected>Any Type</option>
+					<option value="multiple" id="multipleChoice">Multiple chioce</option>
+					<option value="boolean" id="trueFalse">True / False</option>
+				</select required>
+				<input class="form-questions-btn" type="submit" value="Get Questions" id="getQuestionsSubmit">
+			</form>
+		</div>
+		<div class="question-container row col-lg-6 col-md-8 col-sm-10" id="addQuestionResponse">
+			<!-- <div class="arrow-change arrow-change-left"><i class="fas fa-angle-double-right"></i></div>
+			<div class="arrow-change arrow-change-rigth"><i class="fas fa-angle-double-right"></i></div> -->
+		</div>
+	</div>
+	<div class="session-alert" id="sessionAlert">
+		<form action="" class="form-session">
+			<p class="form-close" id="closeSessionCard">x</p>
+			<h3 class="session-title">Login</h3>
+			<input class="session-input" type="text" name="name" id="userName" placeholder="user">
+			<input class="session-input" type="email" name="email" id="email"placeholder="email">
+			<input class="session-input" type="password" name="password" id="password" placeholder="password">
+			<button class="session-login">Login</button>
+			<a href="" onclick="event.preventDefault()" class="create-user">Don't have an account?</a>
+			<a href="" onclick="event.preventDefault()" class="create-user">Login as guest</a>
+		</form>
+	</div>
+	<script src="./js/login.js"></script>
 </body>
 </html>

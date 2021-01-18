@@ -1,0 +1,91 @@
+.session-alert {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(255, 255, 255, 0.7);
+	display: flex;
+	padding: 20px 0;
+	display: none;
+}
+
+.form-close {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 30px;
+	border: 1px solid transparent;
+	text-align: center;
+	font-size: 18px;
+	color:#fff;
+	background-color:  rgba(255, 11, 11, 0.76);
+	border-radius: 50%;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+}
+
+.form-close:hover {
+	color: rgba(255, 11, 11, 0.76);
+	background-color:  #fff;
+	border: 1px solid rgba(255, 11, 11, 0.76);
+}
+
+.form-session {
+	position: relative;
+	margin: auto;
+	padding: 10px;
+	width: 90%;
+	max-width: 300px;
+	display: flex;
+	flex-wrap: wrap;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+}
+
+.session-input {
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #000;
+	margin-bottom: 15px;
+	font-size: 1.2rem;
+}
+
+.session-title {
+	font-size: 1.5rem;
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+.session-login {
+	width: 80%;
+	padding: 10px 25px;
+	max-width: 120px;
+	font-size: 1.2rem;
+	border-radius: 5px;
+	border: 1px solid #000;
+	background-color: #fff;
+	margin: auto;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+
+.session-login:hover {
+	color: #fff;
+	background-color: #000;
+}
+
+.create-user {
+	text-decoration: none;
+	text-align: center;
+	width: 100%;
+	color: rgb(43, 43, 43, .8);
+}
+
+.create-user:hover {
+	color: #000;
+}

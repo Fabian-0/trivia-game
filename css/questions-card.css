@@ -1,0 +1,41 @@
+.question-container {
+	position: relative;
+	margin: 0 auto;
+}
+
+.question-card, .form-answers-btn, .form-questions-btn, .form-questions-input {
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1),
+							5px 5px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.question-card {
+	width: 100%;
+	text-align: center;
+	padding: 20px;
+	border: 1px solid rgba(128, 128, 128, .85);
+	box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1),
+							5px 5px 1px 1px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	margin-bottom: 30px;
+}
+
+.question-properties {
+	display: block;
+	text-align: left;
+	margin: 5px 0;
+	font-weight: bold;
+	color: rgb(66, 66, 66);
+}
+
+.question-title {
+	font-size: 1.25rem;
+}
+
+.form-answers {
+	margin: 15px 0;
+}
+
+.form-answers-btn {
+	font-size: 1.15rem;
+	padding: 15px 30px;
+}
