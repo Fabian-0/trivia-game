@@ -58,3 +58,11 @@ body {
 	font-size: 1.1rem;
 	font-weight: bold;
 }
+
+.question-answers {
+	margin-right: 15px;
+}
+
+.question-answer {
+	font-size: 1.25rem;
+}
