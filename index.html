@@ -14,11 +14,11 @@
 <body>
 	<div class="container" id="containerId">
 		<header class="header row col-lg-12 col-md-12 col-sm-12">
-			<p class="header-total-score" id="userScore">Score: 0</p>
+			<p class="header-total-score"><i class="fas fa-poll"></i> <span id="userScore"></span></p>
 			<h1 class="header-title">Trivia Game</h1>
 			<nav class="header-menu">
-				<ul class="header-list" id="printUser">
-						
+				<ul class="header-list">
+						<li class="header-cont-link"><a onclick="event.preventDefault()" class="header-link"><i class="far fa-user"></i> <span id="printUser"></span></a></li>
 				</ul>
 			</nav>
 		</header>
@@ -44,22 +44,8 @@
 			</form>
 		</div>
 		<div class="question-container row col-lg-6 col-md-8 col-sm-10" id="addQuestionResponse">
-			<!-- <div class="arrow-change arrow-change-left"><i class="fas fa-angle-double-right"></i></div>
-			<div class="arrow-change arrow-change-rigth"><i class="fas fa-angle-double-right"></i></div> -->
 		</div>
 	</div>
-	<div class="session-alert" id="sessionAlert">
-		<form action="" class="form-session">
-			<p class="form-close" id="closeSessionCard">x</p>
-			<h3 class="session-title">Login</h3>
-			<input class="session-input" type="text" name="name" id="userName" placeholder="user">
-			<input class="session-input" type="email" name="email" id="email"placeholder="email">
-			<input class="session-input" type="password" name="password" id="password" placeholder="password">
-			<button class="session-login">Login</button>
-			<a href="" onclick="event.preventDefault()" class="create-user">Don't have an account?</a>
-			<a href="" onclick="event.preventDefault()" class="create-user">Login as guest</a>
-		</form>
-	</div>
-	<script src="./js/login.js"></script>
+	<script src="./js/main.js"></script>
 </body>
 </html>

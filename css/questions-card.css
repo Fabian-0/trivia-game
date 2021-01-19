@@ -8,7 +8,7 @@
 							5px 5px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
-.question-card {
+.question-card, .questions-results {
 	width: 100%;
 	text-align: center;
 	padding: 20px;
@@ -38,4 +38,17 @@
 .form-answers-btn {
 	font-size: 1.15rem;
 	padding: 15px 30px;
+}
+
+.questions-results-data {
+	font-size: 1.1rem;
+	font-weight: bold;
+	padding: 20px;
+	border-top: 1px solid #000;
+}
+
+.questions-results-score {
+	width: 100%;
+	border-top: 1px solid #000;
+	text-align: center;
 }
