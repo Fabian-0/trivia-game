@@ -113,10 +113,15 @@ class UI {
 	static questionTemplateValidate(questType, arrayAnswers, correct_answer,index){
 		let answersTemplate = ``;
 		if(questType == 'multiple' && arrayAnswers.length) {
-			arrayAnswers.splice(Math.round((Math.random()*(arrayAnswers.length))),0,correct_answer);
+			arrayAnswers.splice(Math.round((Math.random()*(arrayAnswers.length))),0, 1);
 			for(let i = 0; i < arrayAnswers.length; i++){
-				answersTemplate += `<label for="answer-${(index)}-${i}" class="question-answer">${arrayAnswers[i]}</label>
-														<input value="${arrayAnswers[i]}" type="radio" name="answer${(index)}" id="answer-${(index)}-${i}" class="question-answers">`;
+				if(arrayAnswers[i] == 1){
+					answersTemplate += `<label for="answer-${(index)}-${i}" class="question-answer">${correct_answer}</label>
+					<input value="${arrayAnswers[i]}" type="radio" name="answer${(index)}" id="answer-${(index)}-${i}" class="question-answers">`;
+				}else{
+					answersTemplate += `<label for="answer-${(index)}-${i}" class="question-answer">${arrayAnswers[i]}</label>
+															<input value="${arrayAnswers[i]}" type="radio" name="answer${(index)}" id="answer-${(index)}-${i}" class="question-answers">`;
+				}
 			}
 			return answersTemplate;
 		}else if(questType == 'boolean') {
@@ -230,10 +235,13 @@ class Questions {
 			for (let i = 0; i < response.length; i++) {
 				let element = document.querySelector('input[name="answer'+ i +'"]:checked');
 				(element == null) ? element ='Not answered' : element = element.value;
-				if(element == response[i].correct_answer) {
+				console.log('0');
+				if(element == 1) {
+					results.push(response[i].correct_answer);
 					score+=100;
+				}else{
+					results.push(element);
 				}
-				results.push(element);
 			}
 			UI.printResults(results, response, score);
 			let updateScore = JSON.parse(localStorage.getItem('Account'));
