@@ -42,19 +42,19 @@ export default  class UI {
 	}
 	static printQuestions(response){
 		const insertQuest = document.getElementById('addQuestionResponse');
-		let html = '';
+		let htmlAdd = ``;
 		response.forEach((element,index) => {
-		 html+= `<div class="question-card">
-				<p class="question-properties">${element.category + ' | ' +element.difficulty + ' | ' +element.type}</p>
-				<h4 class="question-title">${element.question}</h4>
-				<form class="form-answers">
-					${UI.questionTemplateValidate(element.type, element.incorrect_answers,element.correct_answer,index)}
-
-				</form>
-			</div>`;
+		 htmlAdd+= `<div class="question-card">
+									<p class="question-properties">${element.category + ' | ' +element.difficulty + ' | ' +element.type}</p>
+									<h4 class="question-title">${element.question}</h4>
+										${UI.questionTemplateValidate(element.type, element.incorrect_answers,element.correct_answer,index)}
+								</div>`;
 		});
-		html += `<input type="submit" value="Result" class="form-answers-btn" id="form-answers-submit">`;
-		insertQuest.innerHTML = html;
+		let htmlTemplate = `<form action="" class="form-answers" id="form-answers-submit">
+													${htmlAdd}
+													<input type="submit" value="Result" class="form-answers-btn">
+												</form>`;
+		insertQuest.innerHTML = htmlTemplate;
 		Questions.questionsOnClick(response);
 	};
 	static questionTemplateValidate(questType, arrayAnswers, correct_answer,index){
@@ -64,19 +64,27 @@ export default  class UI {
 			for(let i = 0; i < arrayAnswers.length; i++){
 				if(arrayAnswers[i] == 1){
 					answersTemplate += `<label for="answer-${(index)}-${i}" class="question-answer">${correct_answer}</label>
-					<input value="${arrayAnswers[i]}" type="radio" name="answer${(index)}" id="answer-${(index)}-${i}" class="question-answers">`;
+					<input value="${arrayAnswers[i]}" type="radio" name="answer${(index)}" id="answer-${(index)}-${i}" class="question-answers" required>`;
 				}else{
 					answersTemplate += `<label for="answer-${(index)}-${i}" class="question-answer">${arrayAnswers[i]}</label>
-															<input value="${arrayAnswers[i]}" type="radio" name="answer${(index)}" id="answer-${(index)}-${i}" class="question-answers">`;
+															<input value="${arrayAnswers[i]}" type="radio" name="answer${(index)}" id="answer-${(index)}-${i}" class="question-answers" required>`;
 				}
 			}
 			return answersTemplate;
 		}else if(questType == 'boolean') {
-			answersTemplate += `<label for="answer-${(index)}-1" class="question-answer">True</label>
-													<input value="True" type="radio" name="answer${(index)}" id="answer-${(index)}-1" class="question-answers">
-													<label for="answer-${(index)}-2" class="question-answer">False</label>
-													<input value="False" type="radio" name="answer${(index)}" id="answer-${(index)}-2" class="question-answers">`;
-			return answersTemplate;
+			if(correct_answer == 'True'){
+				answersTemplate += `<label for="answer-${(index)}-1" class="question-answer">True</label>
+														<input value="1" type="radio" name="answer${(index)}" id="answer-${(index)}-1" class="question-answers" required>
+														<label for="answer-${(index)}-2" class="question-answer">False</label>
+														<input value="False" type="radio" name="answer${(index)}" id="answer-${(index)}-2" class="question-answers" required>`;
+				return answersTemplate;
+			} else {
+				answersTemplate += `<label for="answer-${(index)}-1" class="question-answer">True</label>
+									<input value="True" type="radio" name="answer${(index)}" id="answer-${(index)}-1" class="question-answers" required>
+									<label for="answer-${(index)}-2" class="question-answer">False</label>
+									<input value="1" type="radio" name="answer${(index)}" id="answer-${(index)}-2" class="question-answers" required>`;
+				return answersTemplate;
+			}
 		}
 	}
 	static printResults(results, response,score){

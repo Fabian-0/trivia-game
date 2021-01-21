@@ -39,13 +39,11 @@ export default class Questions {
 	}
 	static questionsOnClick(response){
 		const btnConsult = document.getElementById('form-answers-submit');
-		btnConsult.addEventListener('click', ()=>{
+		btnConsult.addEventListener('submit', ()=>{
 			let score =0;
 			let results = [];
 			for (let i = 0; i < response.length; i++) {
-				let element = document.querySelector('input[name="answer'+ i +'"]:checked');
-				(element == null) ? element ='Not answered' : element = element.value;
-				console.log('0');
+				let element = document.querySelector('input[name="answer'+ i +'"]:checked').value;
 				if(element == 1) {
 					results.push(response[i].correct_answer);
 					score+=100;
